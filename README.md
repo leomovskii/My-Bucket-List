@@ -8,7 +8,6 @@ A cache layer has been created on top of the database, which reduces the number 
 * Maven
 * Telegram Bots API
 * JDBC for MySQL
-* JUnit
 
 ## TODO
 * Export/Import as JSON
@@ -16,3 +15,4 @@ A cache layer has been created on top of the database, which reduces the number 
 * Illustrations
 * Url's
 * User statistics
+* Unit testing
