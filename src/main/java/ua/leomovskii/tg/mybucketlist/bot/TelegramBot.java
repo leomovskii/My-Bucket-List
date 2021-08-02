@@ -12,14 +12,12 @@ public class TelegramBot extends TelegramLongPollingBot {
 			login(update.getMessage().getFrom());
 
 			if (update.getMessage().hasText())
-				if (update.getMessage().getText().charAt(0) == '/') {
-					// TODO TelegramBot -> onUpdateReceived - recieved a command
-				} else {
-					// TODO TelegramBot -> onUpdateReceived - recieved a message
-				}
-		} else if (update.hasCallbackQuery()) {
-			// TODO TelegramBot -> onUpdateReceived - recieved a callback
-		}
+				if (update.getMessage().getText().charAt(0) == '/')
+					CommandFilter.run(this, update.getMessage());
+				else
+					MessageFilter.run(this, update.getMessage());
+		} else if (update.hasCallbackQuery())
+			CallbackFilter.run(this, update.getCallbackQuery());
 	}
 
 	private void login(User u) {
